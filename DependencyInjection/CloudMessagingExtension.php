@@ -29,7 +29,7 @@ class CloudMessagingExtension extends Extension
         $loader->load('command.xml');
     }
 
-    public function getAlias()
+    public function getAlias(): string
     {
         return 'firebase';
     }
