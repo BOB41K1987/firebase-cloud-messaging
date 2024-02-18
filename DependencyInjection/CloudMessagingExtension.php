@@ -17,7 +17,7 @@ class CloudMessagingExtension extends Extension
      *
      * @throws \InvalidArgumentException When provided tag is not defined in this extension
      */
-    public function load(array $configs, ContainerBuilder $container)
+    public function load(array $configs, ContainerBuilder $container): void
     {
         $configs = $this->processConfiguration(new Configuration(), $configs);
 

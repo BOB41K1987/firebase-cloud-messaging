@@ -18,7 +18,7 @@ class IOSNormalizer implements NormalizerInterface, SerializerAwareInterface
      *
      * @param SerializerInterface $serializer
      */
-    public function setSerializer(SerializerInterface $serializer)
+    public function setSerializer(SerializerInterface $serializer): void
     {
         $this->serializer = $serializer;
     }
@@ -73,6 +73,13 @@ class IOSNormalizer implements NormalizerInterface, SerializerAwareInterface
         }
 
         return $data;
+    }
+
+    public function getSupportedTypes(?string $format): array
+    {
+        return [
+            IOSNotification::class => true,
+        ];
     }
 
     /**

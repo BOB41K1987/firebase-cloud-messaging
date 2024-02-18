@@ -25,7 +25,7 @@ class SimpleMessageCommand extends Command
         parent::__construct();
     }
 
-    protected function configure()
+    protected function configure(): void
     {
         $this
             ->setName('firebase:cloud_message:simple_message')

@@ -18,9 +18,16 @@ class RequestNormalizer implements NormalizerInterface, SerializerAwareInterface
      *
      * @param SerializerInterface $serializer
      */
-    public function setSerializer(SerializerInterface $serializer)
+    public function setSerializer(SerializerInterface $serializer): void
     {
         $this->serializer = $serializer;
+    }
+
+    public function getSupportedTypes(?string $format): array
+    {
+        return [
+            Request::class => true,
+        ];
     }
 
     /**

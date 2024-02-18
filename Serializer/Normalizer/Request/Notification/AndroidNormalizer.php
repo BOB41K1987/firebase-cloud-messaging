@@ -2,6 +2,7 @@
 
 namespace Firebase\Bundle\CloudMessagingBundle\Serializer\Normalizer\Request\Notification;
 
+use Firebase\Bundle\CloudMessagingBundle\Http\Request;
 use Firebase\Bundle\CloudMessagingBundle\Http\Request\AndroidNotification;
 use Symfony\Component\Serializer\Normalizer\NormalizerInterface;
 
@@ -58,6 +59,13 @@ class AndroidNormalizer implements NormalizerInterface
         }
 
         return $data;
+    }
+
+    public function getSupportedTypes(?string $format): array
+    {
+        return [
+            AndroidNotification::class => true,
+        ];
     }
 
     /**

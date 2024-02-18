@@ -40,6 +40,13 @@ class WebNormalizer implements NormalizerInterface
         return $data;
     }
 
+    public function getSupportedTypes(?string $format): array
+    {
+        return [
+            WebNotification::class => true,
+        ];
+    }
+
     /**
      * Checks whether the given class is supported for normalization by this normalizer.
      *
