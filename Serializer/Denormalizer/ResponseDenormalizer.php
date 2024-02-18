@@ -19,9 +19,16 @@ class ResponseDenormalizer implements DenormalizerInterface, SerializerAwareInte
      *
      * @param SerializerInterface $serializer
      */
-    public function setSerializer(SerializerInterface $serializer)
+    public function setSerializer(SerializerInterface $serializer): void
     {
         $this->serializer = $serializer;
+    }
+
+    public function getSupportedTypes(?string $format): array
+    {
+        return [
+            Response::class => true,
+        ];
     }
 
     /**
@@ -83,7 +90,7 @@ class ResponseDenormalizer implements DenormalizerInterface, SerializerAwareInte
      *
      * @return bool
      */
-    public function supportsDenormalization($data, $type, $format = null)
+    public function supportsDenormalization($data, $type, $format = null, array $context = [])
     {
         return Response::class == $type;
     }

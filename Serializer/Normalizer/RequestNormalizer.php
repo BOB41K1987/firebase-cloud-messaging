@@ -39,7 +39,7 @@ class RequestNormalizer implements NormalizerInterface, SerializerAwareInterface
      *
      * @return array
      */
-    public function normalize($object, $format = null, array $context = array())
+    public function normalize($object, $format = null, array $context = [])
     {
         $data = [];
         if ($object->getTo() != null) {
@@ -93,7 +93,7 @@ class RequestNormalizer implements NormalizerInterface, SerializerAwareInterface
      *
      * @return bool
      */
-    public function supportsNormalization($data, $format = null)
+    public function supportsNormalization($data, $format = null, array $context = []): bool
     {
         return is_object($data) && $data instanceof Request;
     }

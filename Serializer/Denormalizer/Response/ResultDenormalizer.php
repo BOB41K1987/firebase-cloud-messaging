@@ -47,8 +47,15 @@ class ResultDenormalizer implements DenormalizerInterface
      *
      * @return bool
      */
-    public function supportsDenormalization($data, $type, $format = null)
+    public function supportsDenormalization($data, $type, $format = null): bool
     {
         return Result::class == $type;
+    }
+
+    public function getSupportedTypes(?string $format): array
+    {
+        return [
+            Result::class => true
+        ];
     }
 }

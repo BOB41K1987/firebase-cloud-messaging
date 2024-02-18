@@ -55,7 +55,7 @@ class WebNormalizer implements NormalizerInterface
      *
      * @return bool
      */
-    public function supportsNormalization($data, $format = null)
+    public function supportsNormalization($data, $format = null, array $context = []): bool
     {
         return is_object($data) && $data instanceof WebNotification;
     }
