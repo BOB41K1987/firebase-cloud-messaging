@@ -18,7 +18,7 @@ class ResultDenormalizer implements DenormalizerInterface
      *
      * @return object
      */
-    public function denormalize($data, $class, $format = null, array $context = array())
+    public function denormalize($data, $class, $format = null, array $context = [])
     {
         /** @var Result $result */
         $result = new $class();
@@ -47,7 +47,7 @@ class ResultDenormalizer implements DenormalizerInterface
      *
      * @return bool
      */
-    public function supportsDenormalization($data, $type, $format = null): bool
+    public function supportsDenormalization($data, $type, $format = null, array $context = []): bool
     {
         return Result::class == $type;
     }
